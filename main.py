@@ -27,7 +27,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Database setup
-DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://localhost/metaads")
+DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./metaads.db")
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(bind=engine)
 Base = declarative_base()
